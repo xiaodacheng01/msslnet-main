@@ -1,0 +1,35 @@
+dataset:
+  root: ./dataset
+  IRSTD-1k:
+    split_method: "seg"
+    size: 512
+    crop_size: 480
+    model: MSSLNet
+    batch: 4
+    epoch: 1500
+    aug: 0.
+  MFIRST:
+    split_method: "seg"
+    size: 128
+    model: MSSLNet
+  NUAA-SIRST:
+    split_method: "seg"
+    size: 512
+    crop_size: 480
+    model: MSSLNet
+    batch: 8
+    epoch: 1500
+    aug: 0.
+  NUDT-SIRST:
+    split_method: "seg"
+    size: 256
+    model: MSSLNet
+    batch: 4
+    aug: 0.
+  IRSTD-Air:
+    split_method: "seg"
+    size: 256
+    model: MSSLNet
+    batch: 16
+    aug: 0.
+
