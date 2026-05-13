@@ -13,23 +13,7 @@ import torch.nn.functional as F
 from thop import profile
 
 
-# class RPReLU(nn.Module):
-#     def __init__(self, num_parameters=1, init_alpha=1.0, init_beta=0.25):
-#         super(RPReLU, self).__init__()
-#         # 正区间缩放参数 alpha（默认恒等映射）
-#         self.alpha = nn.Parameter(torch.full((num_parameters,), init_alpha))
-#         # 负区间斜率参数 beta（类似PReLU）
-#         self.beta = nn.Parameter(torch.full((num_parameters,), init_beta))
 
-#     def forward(self, x):
-#         print('x.shape',x.shape)
-#         # 正区间：alpha * x，负区间：beta * x
-#         pos = (x >= 0).to(x.dtype) * self.alpha * x
-#         neg = (x < 0).to(x.dtype) * self.beta * x
-#         return pos + neg
-
-
-# rprelu = RPReLU(num_parameters=64)  # 输入特征图通道数为64
 
 class SLCB(nn.Module):
     def __init__(self, dim, kernel1, k2, dilation1, dilation2, drop_out=0.1):
